@@ -4,7 +4,8 @@ const express = require('express');
 const routes = express.Router();
 require('dotenv').config();
 const helmet = require('helmet');
-const userRoutes = require('./routes/userRoutes')
+const userRoutes = require('./routes/userRoutes');
+const movieRoutes = require('./routes/movieRoutes');
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.get('/', (req,res)=>{
 });
 
 routes.use('/users',userRoutes);
+routes.use('/movies',movieRoutes);
 
 
 

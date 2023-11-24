@@ -1,10 +1,5 @@
-const { query } = require('express-validator');
 const sequelize = require('../db/connection');
 const { Sequelize, DataTypes } = require('sequelize');
-
-
-
-
 
 const User = sequelize.define('user', {
     firstName: {
@@ -64,19 +59,13 @@ const storeUser = async function (obj) {
     );
 
 
-    return new Promise(async (resolve, reject) => {
-        try {
-            await user.save();
-            resolve(user);
-        } catch (err) {
-            reject(err);
-        }
-    });
+    return new Promise((resolve, reject) => {
+        user.save()
+          .then(() => resolve(user))
+          .catch((err) => reject(err));
+      });
 
 }
-
-
-
 
 
 module.exports = { User, storeUser }

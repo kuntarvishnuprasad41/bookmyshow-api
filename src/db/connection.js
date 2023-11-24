@@ -1,8 +1,6 @@
 let Sequelize = require('sequelize');
 const config = require('../../config').database;
 
-
-
 let sequelize = new Sequelize(config.database, config.username, config.password, {
     host: config.host,
     dialect: config.dialect,
@@ -12,4 +10,4 @@ let sequelize = new Sequelize(config.database, config.username, config.password,
 });
 
 
-module.exports = sequelize, Sequelize;
+module.exports = sequelize;
