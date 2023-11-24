@@ -1,6 +1,12 @@
-const { storeUser } = require("../models/userModel");
+const { storeUser, getUsers } = require("../models/userModel");
 
-require("bcrypt");
+
+
+const getAllUsers = async (req,res)=>{
+  
+  
+  res.status(200).send(await getUsers())
+}
 
 async function createUser(req, res, next) {
   let user = req.body;
@@ -13,4 +19,4 @@ async function createUser(req, res, next) {
     });
 }
 
-module.exports = { createUser };
+module.exports = { createUser, getAllUsers };

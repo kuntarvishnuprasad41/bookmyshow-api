@@ -35,13 +35,12 @@ const User = sequelize.define('user', {
         },
     },
 
-    timestamps: false,
 
     // If don't want createdAt
-    createdAt: false,
+    created_at: false,
 
     // If don't want updatedAt
-    updatedAt: false,
+    updated_at: false,
 
 });
 
@@ -65,7 +64,13 @@ const storeUser = async function (obj) {
           .catch((err) => reject(err));
       });
 
+};
+
+const getUsers = async function(){
+    // Find all users
+    const users = await User.findAll({attributes:{exclude:['password']}});
+    return users;
 }
 
 
-module.exports = { User, storeUser }
+module.exports = { User, storeUser, getUsers }
