@@ -6,6 +6,7 @@ require('dotenv').config();
 const helmet = require('helmet');
 const userRoutes = require('./routes/userRoutes');
 const movieRoutes = require('./routes/movieRoutes');
+const cityRoutes = require('./routes/cityRoutes');
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.get('/', (req,res)=>{
 
 routes.use('/users',userRoutes);
 routes.use('/movies',movieRoutes);
+routes.use('/cities',cityRoutes)
 
 
 
