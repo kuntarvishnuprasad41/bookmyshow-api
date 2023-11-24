@@ -10,6 +10,7 @@ const cityRoutes = require('./routes/cityRoutes');
 const theaterRoutes = require('./routes/theaterRoutes');
 const screenRoutes = require('./routes/screenRoutes');
 const ratingRoutes = require('./routes/ratingRoutes');
+const ticketRoutes = require('./routes/ticketRoutes');
 
 const app = express();
 
@@ -30,22 +31,27 @@ app.get('/', (req,res)=>{
     res.status(200).send("Welcome to BMS");
 });
 
+
+// Implementations
+// cities;    [x]
+// movies;    [x]
+// users;     [x]   
+// ratings;   [x]
+// screens;   [x]
+// theaters;  [x]
+// tickets;   [x]
+
 routes.use('/users',userRoutes);
 routes.use('/movies',movieRoutes);
 routes.use('/cities',cityRoutes);
 routes.use('/theaters',theaterRoutes);
 routes.use('/screens',screenRoutes);
 routes.use('/ratings',ratingRoutes);
+routes.use('/tickets',ticketRoutes);
 
 
 
-// SELECT * FROM cities;    [x]
-// SELECT * FROM movies;    [x]
-// SELECT * FROM users;     [x]   
-// SELECT * FROM ratings;   [x]
-// SELECT * FROM screens;   [x]
-// SELECT * FROM theaters;  [x]
-// SELECT * FROM tickets;   [ ]
+
 
 
 
