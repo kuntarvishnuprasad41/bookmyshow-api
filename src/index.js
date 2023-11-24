@@ -8,6 +8,7 @@ const userRoutes = require('./routes/userRoutes');
 const movieRoutes = require('./routes/movieRoutes');
 const cityRoutes = require('./routes/cityRoutes');
 const theaterRoutes = require('./routes/theaterRoutes');
+const screenRoutes = require('./routes/screenRoutes');
 
 const app = express();
 
@@ -32,6 +33,17 @@ routes.use('/users',userRoutes);
 routes.use('/movies',movieRoutes);
 routes.use('/cities',cityRoutes);
 routes.use('/theaters',theaterRoutes);
+routes.use('/screens',screenRoutes);
+
+
+
+// SELECT * FROM cities;    [x]
+// SELECT * FROM movies;    [x]
+// SELECT * FROM users;     [x]   
+// SELECT * FROM ratings;   [ ]
+// SELECT * FROM screens;   [x]
+// SELECT * FROM theaters;  [x]
+// SELECT * FROM tickets;   [ ]
 
 
 
