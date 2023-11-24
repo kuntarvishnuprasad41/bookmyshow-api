@@ -7,6 +7,7 @@ const helmet = require('helmet');
 const userRoutes = require('./routes/userRoutes');
 const movieRoutes = require('./routes/movieRoutes');
 const cityRoutes = require('./routes/cityRoutes');
+const theaterRoutes = require('./routes/theaterRoutes');
 
 const app = express();
 
@@ -29,7 +30,8 @@ app.get('/', (req,res)=>{
 
 routes.use('/users',userRoutes);
 routes.use('/movies',movieRoutes);
-routes.use('/cities',cityRoutes)
+routes.use('/cities',cityRoutes);
+routes.use('/theaters',theaterRoutes);
 
 
 
