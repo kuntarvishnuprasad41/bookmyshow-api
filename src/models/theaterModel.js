@@ -71,7 +71,6 @@ Screen.belongsTo(Theater,{
 })
 
 const getMovies = async function(theaterId){
-    const NOW = new Date();
     const plus7Days = new Date(new Date().setDate(new Date().getDate() + 7));
 
   
