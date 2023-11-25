@@ -1,8 +1,10 @@
-const { storeTheater } = require("../models/theaterModel");
+const { storeTheater, getAllTheaters, getMovies } = require("../models/theaterModel");
 
 
-const getTheaters = (req,res,next)=>{
-    res.status(200).send('Hi');
+const getTheaters = async (req,res,next)=>{
+
+    let listOfTheaters = getAllTheaters();
+    res.status(200).send(await listOfTheaters);
 
 }
 
@@ -13,7 +15,14 @@ const postTheaters = async(req,res,next)=>{
         return res.status(200).send(data)
     }).catch((err)=>{
         return res.status(500).send(err)
-    })
+    });
+};
+
+const getMoviesByTheater = async(req,res,next) =>{
+    let theaterId = req.params.theater;
+    let movies = await getMovies(theaterId);
+
+    res.status(200).send( movies);
 }
 
-module.exports = {getTheaters, postTheaters};
+module.exports = {getTheaters, postTheaters, getMoviesByTheater};

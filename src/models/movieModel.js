@@ -40,4 +40,4 @@ const storeMovie =  async function(obj){
         
 }
 
-module.exports = {storeMovie};
+module.exports = {storeMovie, Movie};

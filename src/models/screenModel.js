@@ -50,4 +50,4 @@ const storeScreen = async(obj)=>{
     })
 }
 
-module.exports = {storeScreen}
+module.exports = {storeScreen, Screen}

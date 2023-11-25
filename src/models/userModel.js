@@ -1,5 +1,6 @@
 const sequelize = require('../db/connection');
 const { Sequelize, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
 
 const User = sequelize.define('user', {
     firstName: {
@@ -53,7 +54,7 @@ const storeUser = async function (obj) {
             lastName: obj.lastName,
             mobile: obj.mobile,
             email: obj.email,
-            password: obj.password,
+            password: bcrypt.hashSync(obj.password, 8),
         }
     );
 
