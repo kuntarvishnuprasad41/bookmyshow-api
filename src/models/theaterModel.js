@@ -78,8 +78,7 @@ const getMovies = async function(theaterId){
 
     const movie = await Movie.findAll({
         attributes : ['name','censor_certificate_type','language'],
-        include:[
-           { 
+        include:[{ 
              model : Screen,
              attributes : ['id','show_date'],
              where : {
